@@ -29,7 +29,7 @@ function AboutPage() {
             <Link to="/leadership" className="hover:text-[#1FB6D4]">Leadership Team</Link>
             <Link to="/verticals" className="hover:text-[#1FB6D4]">Value Verticals</Link>
             <Link to="/" hash="jobs" className="hover:text-[#1FB6D4]">Job Boards</Link>
-            <Link to="/" hash="contact" className="hover:text-[#1FB6D4]">Contact Us</Link>
+            <Link to="/contact" className="hover:text-[#1FB6D4]">Contact Us</Link>
           </nav>
           <div className="hidden items-center gap-5 text-[#6c6c6c] lg:flex">
             <a href="tel:+911234567890" aria-label="Call"><Phone className="h-5 w-5" /></a>
@@ -82,7 +82,7 @@ function AboutPage() {
               <Link to="/leadership" className="hover:text-[#1FB6D4]">Leadership Team</Link>
               <Link to="/verticals" className="hover:text-[#1FB6D4]">Value Verticals</Link>
               <Link to="/" hash="jobs" className="hover:text-[#1FB6D4]">Job Boards</Link>
-              <Link to="/" hash="contact" className="hover:text-[#1FB6D4]">Contact Us</Link>
+              <Link to="/contact" className="hover:text-[#1FB6D4]">Contact Us</Link>
             </nav>
           </div>
           <div className="mt-8 flex flex-col items-start justify-between gap-6 lg:flex-row lg:items-center">
