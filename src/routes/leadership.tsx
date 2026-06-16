@@ -27,7 +27,7 @@ function LeadershipPage() {
           <nav className="hidden items-center gap-10 text-[15px] font-medium uppercase tracking-wide text-[#6c6c6c] lg:flex">
             <Link to="/about" className="hover:text-[#1FB6D4]">About Us</Link>
             <Link to="/leadership" className="text-[#1FB6D4]">Leadership Team</Link>
-            <Link to="/" hash="verticals" className="hover:text-[#1FB6D4]">Value Verticals</Link>
+            <Link to="/verticals" className="hover:text-[#1FB6D4]">Value Verticals</Link>
             <Link to="/" hash="jobs" className="hover:text-[#1FB6D4]">Job Boards</Link>
             <Link to="/" hash="contact" className="hover:text-[#1FB6D4]">Contact Us</Link>
           </nav>
@@ -95,7 +95,7 @@ function LeadershipPage() {
             <nav className="flex flex-wrap items-center gap-8 text-sm font-medium uppercase tracking-wide text-[#6c6c6c]">
               <Link to="/about" className="hover:text-[#1FB6D4]">About Us</Link>
               <Link to="/leadership" className="text-[#1FB6D4]">Leadership Team</Link>
-              <Link to="/" hash="verticals" className="hover:text-[#1FB6D4]">Value Verticals</Link>
+              <Link to="/verticals" className="hover:text-[#1FB6D4]">Value Verticals</Link>
               <Link to="/" hash="jobs" className="hover:text-[#1FB6D4]">Job Boards</Link>
               <Link to="/" hash="contact" className="hover:text-[#1FB6D4]">Contact Us</Link>
             </nav>
