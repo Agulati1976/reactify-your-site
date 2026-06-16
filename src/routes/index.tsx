@@ -1,8 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Phone, Mail, ChevronUp, FileText, HelpCircle, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
 import logo from "@/assets/huquo-logo.png";
-import heroTeam from "@/assets/hero-team.jpg";
-import analytical from "@/assets/analytical.jpg";
+import heroDesktopAsset from "@/assets/close-up-co-workers-laughing.jpg.asset.json";
+import heroMobileAsset from "@/assets/sam5.jpg.asset.json";
+import analyticalAsset from "@/assets/working-on-project-analytics-2021-08-27-09-54-44-utc-1.png.asset.json";
 import gallery1 from "@/assets/gallery1.jpg";
 import gallery2 from "@/assets/gallery2.jpg";
 import gallery3 from "@/assets/gallery3.jpg";
@@ -46,10 +47,19 @@ function Index() {
 
       {/* Hero */}
       <section className="relative">
-        <img src={heroTeam} alt="HuQuo Team" className="h-[80vh] w-full object-cover" width={1920} height={900} />
+        <picture>
+          <source media="(min-width: 768px)" srcSet={heroDesktopAsset.url} />
+          <img
+            src={heroMobileAsset.url}
+            alt="HuQuo Team"
+            className="h-[70vh] w-full object-cover md:h-[80vh]"
+            width={1920}
+            height={900}
+          />
+        </picture>
         <div className="absolute inset-0 flex items-center">
           <div className="mx-auto w-full max-w-7xl px-6">
-            <div className="max-w-xl text-right ml-auto">
+            <div className="ml-auto max-w-xl text-right">
               <h1 className="text-4xl font-bold uppercase leading-tight text-[#1FB6D4] sm:text-5xl lg:text-6xl">
                 Next Stage In The Evolution of HR
               </h1>
@@ -81,7 +91,7 @@ function Index() {
       {/* Analytical Approach */}
       <section className="bg-white pb-20">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2">
-          <img src={analytical} alt="Analytical approach" className="w-full rounded-sm object-cover" loading="lazy" width={1200} height={700} />
+          <img src={analyticalAsset.url} alt="Analytical approach" className="w-full rounded-sm object-cover" loading="lazy" width={1200} height={700} />
           <div>
             <h2 className="text-3xl font-bold uppercase text-[#1FB6D4] sm:text-4xl">An Analytical Approach</h2>
             <div className="mt-4 h-[2px] w-24 bg-gray-300" />
