@@ -1,9 +1,10 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Phone, Mail, ChevronUp, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
+import { ChevronUp, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
 import logo from "@/assets/huquo-logo.png";
 import banner from "@/assets/about-banner.png.asset.json";
 import whoWeAre from "@/assets/who-we-are.png.asset.json";
 import indiaMap from "@/assets/india-map.png.asset.json";
+import { SiteHeader } from "@/components/SiteHeader";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -19,24 +20,7 @@ function AboutPage() {
   return (
     <div className="min-h-screen bg-white text-[#333]">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white shadow-sm">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <Link to="/" className="flex items-center">
-            <img src={logo} alt="HuQuo" className="h-12 w-auto" width={180} height={48} />
-          </Link>
-          <nav className="hidden items-center gap-10 text-[15px] font-medium uppercase tracking-wide text-[#6c6c6c] lg:flex">
-            <Link to="/about" className="text-[#1FB6D4]">About Us</Link>
-            <Link to="/leadership" className="hover:text-[#1FB6D4]">Leadership Team</Link>
-            <Link to="/verticals" className="hover:text-[#1FB6D4]">Value Verticals</Link>
-            <Link to="/" hash="jobs" className="hover:text-[#1FB6D4]">Job Boards</Link>
-            <Link to="/contact" className="hover:text-[#1FB6D4]">Contact Us</Link>
-          </nav>
-          <div className="hidden items-center gap-5 text-[#6c6c6c] lg:flex">
-            <a href="tel:+911234567890" aria-label="Call"><Phone className="h-5 w-5" /></a>
-            <a href="mailto:info@huquo.com" aria-label="Email"><Mail className="h-5 w-5" /></a>
-          </div>
-        </div>
-      </header>
+      <SiteHeader active={'about'} />
 
       {/* Banner */}
       <section className="relative">
