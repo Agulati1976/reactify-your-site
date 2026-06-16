@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Phone, Mail, ChevronUp, Linkedin, Instagram, Twitter, Facebook } from "lucide-react";
+import { ChevronUp, Linkedin, Instagram, Twitter, Facebook } from "lucide-react";
 import logo from "@/assets/huquo-logo.png";
 import banner from "@/assets/leaders-banner.png.asset.json";
 import manoj from "@/assets/manoj-sharma.png.asset.json";

@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
-  Phone, Mail, ChevronUp, Linkedin, Instagram, Twitter, Facebook,
+  ChevronUp, Linkedin, Instagram, Twitter, Facebook,
   Users, Settings, Smartphone, Lightbulb, Network, FileCheck, HandHelping, BarChart3, UsersRound,
 } from "lucide-react";
 import logo from "@/assets/huquo-logo.png";

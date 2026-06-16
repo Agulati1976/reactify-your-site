@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { Phone, Mail, ChevronUp, Linkedin, Instagram, Twitter, Facebook, Send, MapPin } from "lucide-react";
+import { Phone, ChevronUp, Linkedin, Instagram, Twitter, Facebook, Send, MapPin } from "lucide-react";
 import logo from "@/assets/huquo-logo.png";
 import banner from "@/assets/contact-banner.png.asset.json";
 import timeSquare from "@/assets/time-square.png.asset.json";
