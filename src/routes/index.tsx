@@ -12,6 +12,7 @@ import g9 from "@/assets/gallery-9.jpg.asset.json";
 import g10 from "@/assets/gallery-10.jpg.asset.json";
 import g11 from "@/assets/gallery-11.jpg.asset.json";
 import g12 from "@/assets/gallery-12.jpg.asset.json";
+import { SiteHeader } from "@/components/SiteHeader";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -30,24 +31,7 @@ function Index() {
   return (
     <div className="min-h-screen bg-white text-[#333]">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white shadow-sm">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <a href="#" className="flex items-center">
-            <img src={logo} alt="HuQuo" className="h-12 w-auto" width={180} height={48} />
-          </a>
-          <nav className="hidden items-center gap-10 text-[15px] font-medium uppercase tracking-wide text-[#6c6c6c] lg:flex">
-            <Link to="/about" className="hover:text-[#1FB6D4]">About Us</Link>
-            <Link to="/leadership" className="hover:text-[#1FB6D4]">Leadership Team</Link>
-            <Link to="/verticals" className="hover:text-[#1FB6D4]">Value Verticals</Link>
-            <a href="#jobs" className="hover:text-[#1FB6D4]">Job Boards</a>
-            <Link to="/contact" className="hover:text-[#1FB6D4]">Contact Us</Link>
-          </nav>
-          <div className="hidden items-center gap-5 text-[#6c6c6c] lg:flex">
-            <a href="tel:+911234567890" aria-label="Call"><Phone className="h-5 w-5" /></a>
-            <a href="mailto:info@huquo.com" aria-label="Email"><Mail className="h-5 w-5" /></a>
-          </div>
-        </div>
-      </header>
+      <SiteHeader />
 
       {/* Hero */}
       <section className="relative">

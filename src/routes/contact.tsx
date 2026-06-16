@@ -4,6 +4,7 @@ import { Phone, Mail, ChevronUp, Linkedin, Instagram, Twitter, Facebook, Send, M
 import logo from "@/assets/huquo-logo.png";
 import banner from "@/assets/contact-banner.png.asset.json";
 import timeSquare from "@/assets/time-square.png.asset.json";
+import { SiteHeader } from "@/components/SiteHeader";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -32,24 +33,7 @@ function ContactPage() {
   return (
     <div className="min-h-screen bg-white text-[#333]">
       {/* Header */}
-      <header className="sticky top-0 z-50 bg-white shadow-sm">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <Link to="/" className="flex items-center">
-            <img src={logo} alt="HuQuo" className="h-12 w-auto" width={180} height={48} />
-          </Link>
-          <nav className="hidden items-center gap-10 text-[15px] font-medium uppercase tracking-wide text-[#6c6c6c] lg:flex">
-            <Link to="/about" className={navLink}>About Us</Link>
-            <Link to="/leadership" className={navLink}>Leadership Team</Link>
-            <Link to="/verticals" className={navLink}>Value Verticals</Link>
-            <Link to="/" hash="jobs" className={navLink}>Job Boards</Link>
-            <Link to="/contact" className={navLinkActive}>Contact Us</Link>
-          </nav>
-          <div className="hidden items-center gap-5 text-[#6c6c6c] lg:flex">
-            <a href="tel:+911244559224" aria-label="Call"><Phone className="h-5 w-5" /></a>
-            <a href="mailto:contact@huquo.com" aria-label="Email"><Mail className="h-5 w-5" /></a>
-          </div>
-        </div>
-      </header>
+      <SiteHeader active={'contact'} />
 
       {/* Banner */}
       <section className="relative bg-[#1FB6D4]">
