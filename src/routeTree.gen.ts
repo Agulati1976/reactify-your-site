@@ -9,10 +9,16 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as VerticalsRouteImport } from './routes/verticals'
 import { Route as LeadershipRouteImport } from './routes/leadership'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
+const VerticalsRoute = VerticalsRouteImport.update({
+  id: '/verticals',
+  path: '/verticals',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LeadershipRoute = LeadershipRouteImport.update({
   id: '/leadership',
   path: '/leadership',
@@ -33,34 +39,45 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/leadership': typeof LeadershipRoute
+  '/verticals': typeof VerticalsRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/leadership': typeof LeadershipRoute
+  '/verticals': typeof VerticalsRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/leadership': typeof LeadershipRoute
+  '/verticals': typeof VerticalsRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/leadership'
+  fullPaths: '/' | '/about' | '/leadership' | '/verticals'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/leadership'
-  id: '__root__' | '/' | '/about' | '/leadership'
+  to: '/' | '/about' | '/leadership' | '/verticals'
+  id: '__root__' | '/' | '/about' | '/leadership' | '/verticals'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   LeadershipRoute: typeof LeadershipRoute
+  VerticalsRoute: typeof VerticalsRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/verticals': {
+      id: '/verticals'
+      path: '/verticals'
+      fullPath: '/verticals'
+      preLoaderRoute: typeof VerticalsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/leadership': {
       id: '/leadership'
       path: '/leadership'
@@ -89,6 +106,7 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   LeadershipRoute: LeadershipRoute,
+  VerticalsRoute: VerticalsRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

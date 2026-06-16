@@ -38,7 +38,7 @@ function Index() {
           <nav className="hidden items-center gap-10 text-[15px] font-medium uppercase tracking-wide text-[#6c6c6c] lg:flex">
             <Link to="/about" className="hover:text-[#1FB6D4]">About Us</Link>
             <Link to="/leadership" className="hover:text-[#1FB6D4]">Leadership Team</Link>
-            <a href="#verticals" className="hover:text-[#1FB6D4]">Value Verticals</a>
+            <Link to="/verticals" className="hover:text-[#1FB6D4]">Value Verticals</Link>
             <a href="#jobs" className="hover:text-[#1FB6D4]">Job Boards</a>
             <a href="#contact" className="hover:text-[#1FB6D4]">Contact Us</a>
           </nav>
@@ -181,7 +181,7 @@ function Index() {
             <nav className="flex flex-wrap items-center gap-8 text-sm font-medium uppercase tracking-wide text-[#6c6c6c]">
             <Link to="/about" className="hover:text-[#1FB6D4]">About Us</Link>
               <Link to="/leadership" className="hover:text-[#1FB6D4]">Leadership Team</Link>
-              <a href="#verticals" className="hover:text-[#1FB6D4]">Value Verticals</a>
+              <Link to="/verticals" className="hover:text-[#1FB6D4]">Value Verticals</Link>
               <a href="#jobs" className="hover:text-[#1FB6D4]">Job Boards</a>
               <a href="#contact" className="hover:text-[#1FB6D4]">Contact Us</a>
             </nav>
