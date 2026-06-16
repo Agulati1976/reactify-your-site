@@ -1,13 +1,17 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Phone, Mail, ChevronUp, FileText, HelpCircle, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
+import { Phone, Mail, ChevronUp, FileText, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
 import logo from "@/assets/huquo-logo.png";
 import heroDesktopAsset from "@/assets/close-up-co-workers-laughing.jpg.asset.json";
 import heroMobileAsset from "@/assets/sam5.jpg.asset.json";
 import analyticalAsset from "@/assets/working-on-project-analytics-2021-08-27-09-54-44-utc-1.png.asset.json";
-import gallery1 from "@/assets/gallery1.jpg";
-import gallery2 from "@/assets/gallery2.jpg";
-import gallery3 from "@/assets/gallery3.jpg";
-import gallery4 from "@/assets/gallery4.jpg";
+import whyIcon from "@/assets/group-95.png.asset.json";
+import g2 from "@/assets/gallery-2.jpg.asset.json";
+import g6 from "@/assets/gallery-6.jpg.asset.json";
+import g7 from "@/assets/gallery-7.jpg.asset.json";
+import g9 from "@/assets/gallery-9.jpg.asset.json";
+import g10 from "@/assets/gallery-10.jpg.asset.json";
+import g11 from "@/assets/gallery-11.jpg.asset.json";
+import g12 from "@/assets/gallery-12.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -111,7 +115,7 @@ function Index() {
       <section className="bg-[#1FB6D4] py-20 text-white">
         <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-[1fr_2fr]">
           <div className="flex justify-center">
-            <HelpCircle className="h-64 w-64 text-white" strokeWidth={1.25} />
+            <img src={whyIcon.url} alt="Why it matters" className="h-64 w-64 object-contain" loading="lazy" width={300} height={300} />
           </div>
           <div>
             <h2 className="text-3xl font-bold uppercase sm:text-4xl">Why It Matters?</h2>
@@ -152,8 +156,8 @@ function Index() {
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="text-center text-3xl font-bold text-[#6c6c6c] sm:text-4xl">Photo Gallery</h2>
           <div className="mt-12 grid grid-cols-2 gap-6 lg:grid-cols-4">
-            {[gallery1, gallery2, gallery3, gallery4].map((src, i) => (
-              <img key={i} src={src} alt={`Gallery ${i + 1}`} className="aspect-[4/3] w-full object-cover shadow-md" loading="lazy" width={800} height={600} />
+            {[g2, g6, g7, g9, g10, g11, g12].map((a, i) => (
+              <img key={i} src={a.url} alt={`Gallery ${i + 1}`} className="aspect-[4/3] w-full object-cover shadow-md" loading="lazy" width={800} height={600} />
             ))}
           </div>
         </div>
