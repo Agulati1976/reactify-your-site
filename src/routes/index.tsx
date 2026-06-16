@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { Phone, Mail, ChevronUp, FileText, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
 import logo from "@/assets/huquo-logo.png";
 import heroDesktopAsset from "@/assets/close-up-co-workers-laughing.jpg.asset.json";
@@ -36,7 +36,7 @@ function Index() {
             <img src={logo} alt="HuQuo" className="h-12 w-auto" width={180} height={48} />
           </a>
           <nav className="hidden items-center gap-10 text-[15px] font-medium uppercase tracking-wide text-[#6c6c6c] lg:flex">
-            <a href="#about" className="hover:text-[#1FB6D4]">About Us</a>
+            <Link to="/about" className="hover:text-[#1FB6D4]">About Us</Link>
             <a href="#leadership" className="hover:text-[#1FB6D4]">Leadership Team</a>
             <a href="#verticals" className="hover:text-[#1FB6D4]">Value Verticals</a>
             <a href="#jobs" className="hover:text-[#1FB6D4]">Job Boards</a>
@@ -67,9 +67,9 @@ function Index() {
               <h1 className="text-4xl font-bold uppercase leading-tight text-[#1FB6D4] sm:text-5xl lg:text-6xl">
                 Next Stage In The Evolution of HR
               </h1>
-              <a href="#about" className="mt-8 inline-block border-2 border-[#1FB6D4] bg-transparent px-8 py-3 text-base font-medium text-[#1FB6D4] transition hover:bg-[#1FB6D4] hover:text-white">
+              <Link to="/about" className="mt-8 inline-block border-2 border-[#1FB6D4] bg-transparent px-8 py-3 text-base font-medium text-[#1FB6D4] transition hover:bg-[#1FB6D4] hover:text-white">
                 Know More
-              </a>
+              </Link>
             </div>
           </div>
         </div>
@@ -179,7 +179,7 @@ function Index() {
           <div className="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
             <img src={logo} alt="HuQuo" className="h-12 w-auto" loading="lazy" width={180} height={48} />
             <nav className="flex flex-wrap items-center gap-8 text-sm font-medium uppercase tracking-wide text-[#6c6c6c]">
-              <a href="#about" className="hover:text-[#1FB6D4]">About Us</a>
+            <Link to="/about" className="hover:text-[#1FB6D4]">About Us</Link>
               <a href="#leadership" className="hover:text-[#1FB6D4]">Leadership Team</a>
               <a href="#verticals" className="hover:text-[#1FB6D4]">Value Verticals</a>
               <a href="#jobs" className="hover:text-[#1FB6D4]">Job Boards</a>
