@@ -1,8 +1,13 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ChevronUp, FileText, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
+import { useEffect, useState } from "react";
 import logo from "@/assets/huquo-logo.png";
-import heroDesktopAsset from "@/assets/close-up-co-workers-laughing.jpg.asset.json";
-import heroMobileAsset from "@/assets/sam5.jpg.asset.json";
+import hero1 from "@/assets/hero-1.jpg.asset.json";
+import hero2 from "@/assets/hero-2.jpg.asset.json";
+import hero3 from "@/assets/hero-3.png.asset.json";
+import hero4 from "@/assets/hero-4.jpg.asset.json";
+import heroMobile1 from "@/assets/hero-mobile-1.jpg.asset.json";
+import heroMobile2 from "@/assets/hero-mobile-2.jpg.asset.json";
 import analyticalAsset from "@/assets/working-on-project-analytics-2021-08-27-09-54-44-utc-1.png.asset.json";
 import whyIcon from "@/assets/group-95.png.asset.json";
 import g2 from "@/assets/gallery-2.jpg.asset.json";
@@ -25,23 +30,41 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const desktopSlides = [hero1.url, hero2.url, hero3.url, hero4.url];
+  const mobileSlides = [heroMobile1.url, heroMobile2.url];
+  const [slide, setSlide] = useState(0);
+  const slideCount = Math.max(desktopSlides.length, mobileSlides.length);
+  useEffect(() => {
+    const id = setInterval(() => setSlide((s) => (s + 1) % slideCount), 5000);
+    return () => clearInterval(id);
+  }, [slideCount]);
   return (
     <div className="min-h-screen bg-white text-[#333]">
       {/* Header */}
       <SiteHeader />
 
       {/* Hero */}
-      <section className="relative">
-        <picture>
-          <source media="(min-width: 768px)" srcSet={heroDesktopAsset.url} />
-          <img
-            src={heroMobileAsset.url}
-            alt="HuQuo Team"
-            className="h-[80vh] w-full object-cover md:h-[80vh]"
-            width={1920}
-            height={900}
-          />
-        </picture>
+      <section className="relative h-[80vh] overflow-hidden">
+        {Array.from({ length: slideCount }).map((_, i) => {
+          const d = desktopSlides[i % desktopSlides.length];
+          const m = mobileSlides[i % mobileSlides.length];
+          return (
+            <picture
+              key={i}
+              className={`absolute inset-0 transition-opacity duration-1000 ${slide === i ? "opacity-100" : "opacity-0"}`}
+            >
+              <source media="(min-width: 768px)" srcSet={d} />
+              <img
+                src={m}
+                alt="HuQuo"
+                className="h-full w-full object-cover"
+                width={1920}
+                height={900}
+                loading={i === 0 ? "eager" : "lazy"}
+              />
+            </picture>
+          );
+        })}
         {/* Dark overlay only on mobile */}
         <div className="absolute inset-0 bg-black/45 md:bg-transparent" />
         <div className="absolute inset-0 flex items-end justify-center pb-16 md:items-center md:justify-end md:pb-0">
@@ -55,6 +78,17 @@ function Index() {
               </Link>
             </div>
           </div>
+        </div>
+        {/* Slide dots */}
+        <div className="absolute bottom-4 left-1/2 z-10 flex -translate-x-1/2 gap-2">
+          {Array.from({ length: slideCount }).map((_, i) => (
+            <button
+              key={i}
+              aria-label={`Slide ${i + 1}`}
+              onClick={() => setSlide(i)}
+              className={`h-2 rounded-full transition-all ${slide === i ? "w-6 bg-white" : "w-2 bg-white/60"}`}
+            />
+          ))}
         </div>
       </section>
 
