@@ -4,7 +4,7 @@ import {
   Users, Settings, Smartphone, Lightbulb, Network, FileCheck, HandHelping, BarChart3, UsersRound,
 } from "lucide-react";
 import logo from "@/assets/huquo-logo.png";
-import banner from "@/assets/verticals-banner.png.asset.json";
+import banner from "@/assets/verticals-banner-new.png.asset.json";
 import { SiteHeader } from "@/components/SiteHeader";
 
 export const Route = createFileRoute("/verticals")({
