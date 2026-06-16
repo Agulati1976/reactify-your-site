@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { Phone, Mail, ChevronUp, FileText, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
+import { ChevronUp, FileText, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
 import logo from "@/assets/huquo-logo.png";
 import heroDesktopAsset from "@/assets/close-up-co-workers-laughing.jpg.asset.json";
 import heroMobileAsset from "@/assets/sam5.jpg.asset.json";
@@ -24,9 +24,6 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const CYAN = "#1FB6D4";
-const GREY = "#6c6c6c";
-
 function Index() {
   return (
     <div className="min-h-screen bg-white text-[#333]">
@@ -40,18 +37,20 @@ function Index() {
           <img
             src={heroMobileAsset.url}
             alt="HuQuo Team"
-            className="h-[70vh] w-full object-cover md:h-[80vh]"
+            className="h-[80vh] w-full object-cover md:h-[80vh]"
             width={1920}
             height={900}
           />
         </picture>
-        <div className="absolute inset-0 flex items-center">
+        {/* Dark overlay only on mobile */}
+        <div className="absolute inset-0 bg-black/45 md:bg-transparent" />
+        <div className="absolute inset-0 flex items-end justify-center pb-16 md:items-center md:justify-end md:pb-0">
           <div className="mx-auto w-full max-w-7xl px-6">
-            <div className="ml-auto max-w-xl text-right">
-              <h1 className="text-4xl font-bold uppercase leading-tight text-[#1FB6D4] sm:text-5xl lg:text-6xl">
+            <div className="mx-auto max-w-xl text-center md:ml-auto md:mr-0 md:text-right">
+              <h1 className="text-3xl font-bold uppercase leading-tight text-white sm:text-4xl md:text-5xl md:text-[#1FB6D4] lg:text-6xl">
                 Next Stage In The Evolution of HR
               </h1>
-              <Link to="/about" className="mt-8 inline-block border-2 border-[#1FB6D4] bg-transparent px-8 py-3 text-base font-medium text-[#1FB6D4] transition hover:bg-[#1FB6D4] hover:text-white">
+              <Link to="/about" className="mt-6 inline-block border-2 border-white bg-transparent px-8 py-3 text-base font-medium text-white transition hover:bg-white hover:text-[#1FB6D4] md:mt-8 md:border-[#1FB6D4] md:text-[#1FB6D4] md:hover:bg-[#1FB6D4] md:hover:text-white">
                 Know More
               </Link>
             </div>
