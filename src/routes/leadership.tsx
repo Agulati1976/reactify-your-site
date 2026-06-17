@@ -23,31 +23,14 @@ export default function LeadershipPage() {
         </div>
       </section>
 
-      {/* CEO - Manoj Sharma */}
+      {/* MD - Arpana */}
       <section className="relative py-20">
         <div className="absolute left-0 top-1/2 hidden h-64 w-32 -translate-y-1/2 bg-[#1FB6D4] lg:block" />
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2">
           <div className="flex justify-center">
-            <img src={manoj.url} alt="Manoj Sharma" className="aspect-square w-80 max-w-full rounded-full object-cover object-top shadow-lg" loading="lazy" width={500} height={500} />
+            <img src={arpana.url} alt="Arpana M. Sharma" className="aspect-square w-80 max-w-full rounded-full object-cover object-top shadow-lg" loading="lazy" width={500} height={500} />
           </div>
           <div>
-            <h2 className="text-4xl font-bold text-[#1a1a1a] sm:text-5xl">Manoj Sharma</h2>
-            <p className="mt-3 text-2xl text-[#1a1a1a]">Chief Executive Officer (CEO)</p>
-            <p className="mt-8 leading-relaxed text-[#1a3b6e]">
-              "Human resources isn't a thing we do. It's the thing that runs our business. We help our clients enhance growth &amp; profitability by providing all human capital services like talent acquisition, HR analytics, flexible staffing, and HR general management on time with global standards, which is one of the prime disruptions these days for the client in meeting their respective client expectation and delivery on time."
-            </p>
-            <a href="#" aria-label="LinkedIn" className="mt-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#1FB6D4] text-white hover:opacity-90">
-              <Linkedin className="h-6 w-6" />
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* MD - Arpana */}
-      <section className="relative py-20">
-        <div className="absolute right-0 top-1/2 hidden h-64 w-32 -translate-y-1/2 bg-[#1FB6D4] lg:block" />
-        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2">
-          <div className="order-2 lg:order-1">
             <h2 className="text-4xl font-bold text-[#1a1a1a] sm:text-5xl">Arpana M. Sharma</h2>
             <p className="mt-3 text-2xl text-[#1a1a1a]">Managing Director (MD)</p>
             <p className="mt-8 leading-relaxed text-[#1a3b6e]">
@@ -57,8 +40,25 @@ export default function LeadershipPage() {
               <Linkedin className="h-6 w-6" />
             </a>
           </div>
+        </div>
+      </section>
+
+      {/* CEO - Manoj Sharma */}
+      <section className="relative py-20">
+        <div className="absolute right-0 top-1/2 hidden h-64 w-32 -translate-y-1/2 bg-[#1FB6D4] lg:block" />
+        <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2">
+          <div className="order-2 lg:order-1">
+            <h2 className="text-4xl font-bold text-[#1a1a1a] sm:text-5xl">Manoj Sharma</h2>
+            <p className="mt-3 text-2xl text-[#1a1a1a]">Chief Executive Officer (CEO)</p>
+            <p className="mt-8 leading-relaxed text-[#1a3b6e]">
+              "Human resources isn't a thing we do. It's the thing that runs our business. We help our clients enhance growth &amp; profitability by providing all human capital services like talent acquisition, HR analytics, flexible staffing, and HR general management on time with global standards, which is one of the prime disruptions these days for the client in meeting their respective client expectation and delivery on time."
+            </p>
+            <a href="#" aria-label="LinkedIn" className="mt-6 inline-flex h-12 w-12 items-center justify-center rounded-full bg-[#1FB6D4] text-white hover:opacity-90">
+              <Linkedin className="h-6 w-6" />
+            </a>
+          </div>
           <div className="order-1 flex justify-center lg:order-2">
-            <img src={arpana.url} alt="Arpana M. Sharma" className="aspect-square w-80 max-w-full rounded-full object-cover object-top shadow-lg" loading="lazy" width={500} height={500} />
+            <img src={manoj.url} alt="Manoj Sharma" className="aspect-square w-80 max-w-full rounded-full object-cover object-top shadow-lg" loading="lazy" width={500} height={500} />
           </div>
         </div>
       </section>
