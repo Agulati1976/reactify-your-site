@@ -2,8 +2,9 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { ChevronUp, Linkedin, Instagram, Twitter, Facebook } from "lucide-react";
 import logo from "@/assets/huquo-logo.png";
+import manojAsset from "@/assets/manoj-sharma-new.jpg.asset.json";
 const banner = { url: "/assets/leaders-banner.png" };
-const manoj = { url: "/assets/manoj-sharma.jpg" };
+const manoj = { url: manojAsset.url };
 const arpana = { url: "/assets/arpana-sharma.jpg" };
 import { SiteHeader } from "@/components/SiteHeader";
 
