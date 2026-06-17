@@ -28,7 +28,7 @@ export default function LeadershipPage() {
         <div className="absolute left-0 top-1/2 hidden h-64 w-32 -translate-y-1/2 bg-[#1FB6D4] lg:block" />
         <div className="relative mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-6 lg:grid-cols-2">
           <div className="flex justify-center">
-            <img src={manoj.url} alt="Manoj Sharma" className="aspect-square w-80 max-w-full rounded-full object-cover shadow-lg" loading="lazy" width={500} height={500} />
+            <img src={manoj.url} alt="Manoj Sharma" className="aspect-square w-80 max-w-full rounded-full object-cover object-top shadow-lg" loading="lazy" width={500} height={500} />
           </div>
           <div>
             <h2 className="text-4xl font-bold text-[#1a1a1a] sm:text-5xl">Manoj Sharma</h2>
@@ -58,7 +58,7 @@ export default function LeadershipPage() {
             </a>
           </div>
           <div className="order-1 flex justify-center lg:order-2">
-            <img src={arpana.url} alt="Arpana M. Sharma" className="aspect-square w-80 max-w-full rounded-full object-cover shadow-lg" loading="lazy" width={500} height={500} />
+            <img src={arpana.url} alt="Arpana M. Sharma" className="aspect-square w-80 max-w-full rounded-full object-cover object-top shadow-lg" loading="lazy" width={500} height={500} />
           </div>
         </div>
       </section>
