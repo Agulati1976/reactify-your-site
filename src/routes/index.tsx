@@ -155,10 +155,10 @@ export default function Index() {
               <FileText className="h-10 w-10" />
               Search And Apply
             </a>
-            <a href="#" className="flex items-center justify-center gap-4 border-2 border-[#1FB6D4] bg-white px-8 py-8 text-xl font-bold uppercase text-[#1FB6D4] transition hover:bg-[#1FB6D4] hover:text-white">
+            <Link to="/cv-form" className="flex items-center justify-center gap-4 border-2 border-[#1FB6D4] bg-white px-8 py-8 text-xl font-bold uppercase text-[#1FB6D4] transition hover:bg-[#1FB6D4] hover:text-white">
               <FileText className="h-10 w-10" />
               Drop Your CV Here
-            </a>
+            </Link>
           </div>
         </div>
       </section>
