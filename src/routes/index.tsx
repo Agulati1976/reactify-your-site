@@ -178,7 +178,7 @@ export default function Index() {
             <CarouselContent>
               {[g2, g6, g7, g9, g10, g11, g12].map((a, i) => (
                 <CarouselItem key={i} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
-                  <img src={a.url} alt={`Gallery ${i + 1}`} className="aspect-[4/3] w-full object-cover shadow-md" loading="lazy" width={800} height={600} />
+                  <img src={a.url} alt={`Gallery ${i + 1}`} className="aspect-[4/3] w-full object-cover shadow-md" width={800} height={600} />
                 </CarouselItem>
               ))}
             </CarouselContent>
