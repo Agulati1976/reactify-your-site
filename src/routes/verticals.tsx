@@ -5,7 +5,7 @@ import {
   Users, Settings, Smartphone, Lightbulb, Network, FileCheck, HandHelping, BarChart3, UsersRound,
 } from "lucide-react";
 import logo from "@/assets/huquo-logo.png";
-import banner from "@/assets/verticals-banner-new.png.asset.json";
+const banner = { url: "/assets/verticals-banner-new.png" };
 import { SiteHeader } from "@/components/SiteHeader";
 
 const verticals = [

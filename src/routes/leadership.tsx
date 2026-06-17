@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { ChevronUp, Linkedin, Instagram, Twitter, Facebook } from "lucide-react";
 import logo from "@/assets/huquo-logo.png";
-import banner from "@/assets/leaders-banner.png.asset.json";
-import manoj from "@/assets/manoj-sharma.png.asset.json";
-import arpana from "@/assets/arpana-sharma.png.asset.json";
+const banner = { url: "/assets/leaders-banner.png" };
+const manoj = { url: "/assets/manoj-sharma.png" };
+const arpana = { url: "/assets/arpana-sharma.png" };
 import { SiteHeader } from "@/components/SiteHeader";
 
 export default function LeadershipPage() {

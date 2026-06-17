@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { ChevronUp, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
 import logo from "@/assets/huquo-logo.png";
-import banner from "@/assets/about-banner.png.asset.json";
-import whoWeAre from "@/assets/who-we-are.png.asset.json";
-import indiaMap from "@/assets/india-map.png.asset.json";
+const banner = { url: "/assets/about-banner.png" };
+const whoWeAre = { url: "/assets/who-we-are.png" };
+const indiaMap = { url: "/assets/india-map.png" };
 import { SiteHeader } from "@/components/SiteHeader";
 
 export default function AboutPage() {
