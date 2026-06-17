@@ -3,8 +3,8 @@ import { useEffect } from "react";
 import { ChevronUp, Linkedin, Instagram, Twitter, Facebook } from "lucide-react";
 import logo from "@/assets/huquo-logo.png";
 const banner = { url: "/assets/leaders-banner.png" };
-const manoj = { url: "/assets/manoj-sharma.png" };
-const arpana = { url: "/assets/arpana-sharma.png" };
+const manoj = { url: "/assets/manoj-sharma.jpg" };
+const arpana = { url: "/assets/arpana-sharma.jpg" };
 import { SiteHeader } from "@/components/SiteHeader";
 
 export default function LeadershipPage() {
