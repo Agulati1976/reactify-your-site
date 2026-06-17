@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ChevronUp, FileText, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import logo from "@/assets/huquo-logo.png";
 const hero1 = { url: "/assets/hero-1.jpg" };
 const hero2 = { url: "/assets/hero-2.jpg" };
@@ -167,11 +174,17 @@ export default function Index() {
       <section className="bg-[#f4f4f4] py-20">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="text-center text-3xl font-bold text-[#6c6c6c] sm:text-4xl">Photo Gallery</h2>
-          <div className="mt-12 grid grid-cols-2 gap-6 lg:grid-cols-4">
-            {[g2, g6, g7, g9, g10, g11, g12].map((a, i) => (
-              <img key={i} src={a.url} alt={`Gallery ${i + 1}`} className="aspect-[4/3] w-full object-cover shadow-md" loading="lazy" width={800} height={600} />
-            ))}
-          </div>
+          <Carousel className="mt-12 w-full px-10">
+            <CarouselContent>
+              {[g2, g6, g7, g9, g10, g11, g12].map((a, i) => (
+                <CarouselItem key={i} className="basis-1/2 md:basis-1/3 lg:basis-1/4">
+                  <img src={a.url} alt={`Gallery ${i + 1}`} className="aspect-[4/3] w-full object-cover shadow-md" width={800} height={600} />
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="left-0 bg-white/80 hover:bg-white border-none shadow-md" />
+            <CarouselNext className="right-0 bg-white/80 hover:bg-white border-none shadow-md" />
+          </Carousel>
         </div>
       </section>
 
