@@ -1,22 +1,13 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import { Phone, ChevronUp, Linkedin, Instagram, Twitter, Facebook, Send, MapPin } from "lucide-react";
 import logo from "@/assets/huquo-logo.png";
 import banner from "@/assets/contact-banner.png.asset.json";
 import timeSquare from "@/assets/time-square.png.asset.json";
 import { SiteHeader } from "@/components/SiteHeader";
 
-export const Route = createFileRoute("/contact")({
-  head: () => ({
-    meta: [
-      { title: "Contact Us - HuQuo" },
-      { name: "description", content: "Get in touch with HuQuo Consulting - offices in India, US and UK." },
-    ],
-  }),
-  component: ContactPage,
-});
-
-function ContactPage() {
+export default function ContactPage() {
+  useEffect(() => { document.title = "Contact Us - HuQuo"; }, []);
   const [form, setForm] = useState({ name: "", email: "", subject: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
@@ -120,7 +111,7 @@ function ContactPage() {
               <Link to="/about" className={navLink}>About Us</Link>
               <Link to="/leadership" className={navLink}>Leadership Team</Link>
               <Link to="/verticals" className={navLink}>Value Verticals</Link>
-              <Link to="/" hash="jobs" className={navLink}>Job Boards</Link>
+              <Link to="/#jobs" className={navLink}>Job Boards</Link>
               <Link to="/contact" className={navLinkActive}>Contact Us</Link>
             </nav>
           </div>

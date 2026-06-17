@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import { ChevronUp, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
 import logo from "@/assets/huquo-logo.png";
 import banner from "@/assets/about-banner.png.asset.json";
@@ -6,17 +7,8 @@ import whoWeAre from "@/assets/who-we-are.png.asset.json";
 import indiaMap from "@/assets/india-map.png.asset.json";
 import { SiteHeader } from "@/components/SiteHeader";
 
-export const Route = createFileRoute("/about")({
-  head: () => ({
-    meta: [
-      { title: "About Us - HuQuo" },
-      { name: "description", content: "HuQuo is a young HR Management organisation founded in 2016, headquartered in Gurgaon, India." },
-    ],
-  }),
-  component: AboutPage,
-});
-
-function AboutPage() {
+export default function AboutPage() {
+  useEffect(() => { document.title = "About Us - HuQuo"; }, []);
   return (
     <div className="min-h-screen bg-white text-[#333]">
       {/* Header */}
@@ -65,7 +57,7 @@ function AboutPage() {
               <Link to="/about" className="text-[#1FB6D4]">About Us</Link>
               <Link to="/leadership" className="hover:text-[#1FB6D4]">Leadership Team</Link>
               <Link to="/verticals" className="hover:text-[#1FB6D4]">Value Verticals</Link>
-              <Link to="/" hash="jobs" className="hover:text-[#1FB6D4]">Job Boards</Link>
+              <Link to="/#jobs" className="hover:text-[#1FB6D4]">Job Boards</Link>
               <Link to="/contact" className="hover:text-[#1FB6D4]">Contact Us</Link>
             </nav>
           </div>

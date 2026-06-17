@@ -1,6 +1,6 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
-import { ChevronUp, FileText, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { ChevronUp, FileText, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
 import logo from "@/assets/huquo-logo.png";
 import hero1 from "@/assets/hero-1.jpg.asset.json";
 import hero2 from "@/assets/hero-2.jpg.asset.json";
@@ -19,21 +19,10 @@ import g11 from "@/assets/gallery-11.jpg.asset.json";
 import g12 from "@/assets/gallery-12.jpg.asset.json";
 import { SiteHeader } from "@/components/SiteHeader";
 
-export const Route = createFileRoute("/")({
-  head: () => ({
-    meta: [
-      { title: "HuQuo - Analysing The Human Quotient" },
-      { name: "description", content: "HuQuo is the next stage in the evolution of HR. A fresh perspective towards people and organisations." },
-    ],
-    links: [
-      { rel: "preload", as: "image", href: heroMobile1.url, media: "(max-width: 767px)", fetchpriority: "high" } as any,
-      { rel: "preload", as: "image", href: hero1.url, media: "(min-width: 768px)", fetchpriority: "high" } as any,
-    ],
-  }),
-  component: Index,
-});
-
-function Index() {
+export default function Index() {
+  useEffect(() => {
+    document.title = "HuQuo - Analysing The Human Quotient";
+  }, []);
   const desktopSlides = [hero1.url, hero2.url, hero3.url, hero4.url];
   const mobileSlides = [heroMobile1.url, heroMobile2.url];
   const [slide, setSlide] = useState(0);
