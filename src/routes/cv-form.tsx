@@ -139,6 +139,16 @@ export default function CvFormPage() {
                   <input required maxLength={120} value={form.location} onChange={(e) => set("location", e.target.value)} placeholder="Tell us about your current location" className={inputCls} />
                 </div>
 
+                {form.outsideIndia && (
+                  <div>
+                    <label className={labelCls}>Select Country</label>
+                    <select value={form.country} onChange={(e) => set("country", e.target.value)} className={selectCls}>
+                      <option value="">Select Country</option>
+                      {countries.map((c) => <option key={c} value={c}>{c}</option>)}
+                    </select>
+                  </div>
+                )}
+
                 <div>
                   <label className={labelCls}>Total Experience :</label>
                   <select value={form.experience} onChange={(e) => set("experience", e.target.value)} className={selectCls}>
