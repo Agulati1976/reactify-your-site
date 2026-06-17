@@ -72,13 +72,33 @@ export default function CvFormPage() {
   useEffect(() => { document.title = "Drop Your CV - HuQuo"; }, []);
   const [form, setForm] = useState<FormState>(initial);
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const set = <K extends keyof FormState>(k: K, v: FormState[K]) => setForm((f) => ({ ...f, [k]: v }));
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name.trim() || !form.email.trim() || !form.location.trim() || !form.company.trim() || !form.designation.trim() || !form.ugCourse.trim()) return;
-    setSubmitted(true);
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    setErrorMsg(null);
+    setSending(true);
+    try {
+      const fd = new FormData();
+      Object.entries(form).forEach(([k, val]) => {
+        if (k === "resume") return;
+        if (typeof val === "boolean") fd.append(k, val ? "true" : "false");
+        else fd.append(k, String(val ?? ""));
+      });
+      if (form.resume) fd.append("resume", form.resume);
+      const res = await fetch("/send-cv.php", { method: "POST", body: fd });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data?.ok) throw new Error(data?.error || "Failed to send");
+      setSubmitted(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (err: any) {
+      setErrorMsg(err?.message || "Something went wrong. Please try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   const labelCls = "block text-[15px] font-bold text-[#1a1a1a]";
@@ -101,7 +121,7 @@ export default function CvFormPage() {
       <section className="bg-[#f5f5f5] py-12">
         <div className="mx-auto max-w-4xl px-4 sm:px-6">
           <div className="bg-white p-6 shadow-sm sm:p-10">
-            {submitted ? (
+                {submitted ? (
               <div className="py-10 text-center">
                 <h2 className="text-2xl font-bold text-[#1a1a1a]">Thanks for submitting your CV!</h2>
                 <p className="mt-3 text-[#555]">Our team will get in touch with you shortly.</p>
@@ -231,7 +251,8 @@ export default function CvFormPage() {
                 </div>
 
                 <div className="pt-2">
-                  <button type="submit" className="rounded-full bg-[#1FB6D4] px-10 py-2.5 font-semibold text-white hover:opacity-90">Submit</button>
+                  {errorMsg && <p className="mb-3 text-sm text-red-600">{errorMsg}</p>}
+                  <button type="submit" disabled={sending} className="rounded-full bg-[#1FB6D4] px-10 py-2.5 font-semibold text-white hover:opacity-90 disabled:opacity-60">{sending ? "Sending..." : "Submit"}</button>
                 </div>
               </form>
             )}
