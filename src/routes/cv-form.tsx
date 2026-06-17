@@ -10,6 +10,7 @@ type FormState = {
   mobile: string;
   outsideIndia: boolean;
   location: string;
+  country: string;
   experience: string;
   resume: File | null;
   noResume: boolean;
@@ -31,6 +32,7 @@ const initial: FormState = {
   mobile: "",
   outsideIndia: false,
   location: "",
+  country: "",
   experience: "",
   resume: null,
   noResume: false,
@@ -57,6 +59,14 @@ const ugCourses = [
 const ugSpecs = ["Computer Science", "Information Technology", "Electronics", "Mechanical", "Civil", "Electrical", "Chemical", "Other"];
 const pgCourses = ["M.Tech", "M.Sc", "M.Com", "M.A", "MBA/PGDM", "M.C.A", "M.Pharma", "LLM", "Other", "None"];
 const pgSpecs = ["Computer Science", "Marketing", "Finance", "HR", "Operations", "Other"];
+
+const countries = [
+  "United States", "United Kingdom", "Canada", "Australia", "Germany", "France", "Singapore",
+  "UAE", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain", "Malaysia", "Thailand",
+  "Philippines", "Indonesia", "Vietnam", "Japan", "South Korea", "China", "Hong Kong",
+  "Netherlands", "Sweden", "Switzerland", "Italy", "Spain", "South Africa", "Nigeria",
+  "Kenya", "Brazil", "Mexico", "Argentina", "New Zealand", "Ireland", "Belgium", "Other",
+];
 
 export default function CvFormPage() {
   useEffect(() => { document.title = "Drop Your CV - HuQuo"; }, []);
@@ -128,6 +138,16 @@ export default function CvFormPage() {
                   <label className={labelCls}>Current location :{req}</label>
                   <input required maxLength={120} value={form.location} onChange={(e) => set("location", e.target.value)} placeholder="Tell us about your current location" className={inputCls} />
                 </div>
+
+                {form.outsideIndia && (
+                  <div>
+                    <label className={labelCls}>Select Country</label>
+                    <select value={form.country} onChange={(e) => set("country", e.target.value)} className={selectCls}>
+                      <option value="">Select Country</option>
+                      {countries.map((c) => <option key={c} value={c}>{c}</option>)}
+                    </select>
+                  </div>
+                )}
 
                 <div>
                   <label className={labelCls}>Total Experience :</label>
