@@ -21,6 +21,7 @@ type FormState = {
   pgCourseOther: string;
   pgSpec: string;
   ctc: string;
+  ctcCurrency: "inr" | "usd";
   ctcExample: string;
 };
 
@@ -41,6 +42,7 @@ const initial: FormState = {
   pgCourseOther: "",
   pgSpec: "",
   ctc: "",
+  ctcCurrency: "inr",
   ctcExample: "",
 };
 
