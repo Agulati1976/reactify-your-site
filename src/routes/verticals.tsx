@@ -1,4 +1,5 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
+import { useEffect } from "react";
 import {
   ChevronUp, Linkedin, Instagram, Twitter, Facebook,
   Users, Settings, Smartphone, Lightbulb, Network, FileCheck, HandHelping, BarChart3, UsersRound,
@@ -6,16 +7,6 @@ import {
 import logo from "@/assets/huquo-logo.png";
 import banner from "@/assets/verticals-banner-new.png.asset.json";
 import { SiteHeader } from "@/components/SiteHeader";
-
-export const Route = createFileRoute("/verticals")({
-  head: () => ({
-    meta: [
-      { title: "Value Verticals - HuQuo" },
-      { name: "description", content: "Explore HuQuo's value verticals - Huquo Highs, Heads, Hikes, Hires, Heroes, Hunts, HR General Management, Analytics, and Business Associates." },
-    ],
-  }),
-  component: VerticalsPage,
-});
 
 const verticals = [
   { Icon: Users, title: "Huquo Highs", sub: "Strategic and Leadership Hiring", desc: "Huquo Highs is the business unit led by seasoned search executives with rich exposure. Our experts will first understand the organisation's expectations from the new leader. And then bring a befitting match on board after extensive research and assessment." },
@@ -29,7 +20,8 @@ const verticals = [
   { Icon: UsersRound, title: "Huquo Business Associates", sub: "", desc: "Associates are business partners located in various locations (including Global locations) to increase delivery reach for our clients." },
 ];
 
-function VerticalsPage() {
+export default function VerticalsPage() {
+  useEffect(() => { document.title = "Value Verticals - HuQuo"; }, []);
   return (
     <div className="min-h-screen bg-white text-[#333]">
       {/* Header */}
@@ -75,7 +67,7 @@ function VerticalsPage() {
               <Link to="/about" className="hover:text-[#1FB6D4]">About Us</Link>
               <Link to="/leadership" className="hover:text-[#1FB6D4]">Leadership Team</Link>
               <Link to="/verticals" className="text-[#1FB6D4]">Value Verticals</Link>
-              <Link to="/" hash="jobs" className="hover:text-[#1FB6D4]">Job Boards</Link>
+              <Link to="/#jobs" className="hover:text-[#1FB6D4]">Job Boards</Link>
               <Link to="/contact" className="hover:text-[#1FB6D4]">Contact Us</Link>
             </nav>
           </div>

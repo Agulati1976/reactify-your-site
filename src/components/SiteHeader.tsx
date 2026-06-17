@@ -1,15 +1,15 @@
 import { useState } from "react";
-import { Link } from "@tanstack/react-router";
+import { Link } from "react-router-dom";
 import { Phone, Mail, Menu, X } from "lucide-react";
 import logo from "@/assets/huquo-logo.png";
 
 type NavKey = "about" | "leadership" | "verticals" | "jobs" | "contact" | null;
 
-const items: { key: Exclude<NavKey, null>; label: string; to?: string; hash?: string }[] = [
+const items: { key: Exclude<NavKey, null>; label: string; to: string }[] = [
   { key: "about", label: "About Us", to: "/about" },
   { key: "leadership", label: "Leadership Team", to: "/leadership" },
   { key: "verticals", label: "Value Verticals", to: "/verticals" },
-  { key: "jobs", label: "Job Boards", to: "/", hash: "jobs" },
+  { key: "jobs", label: "Job Boards", to: "/#jobs" },
   { key: "contact", label: "Contact Us", to: "/contact" },
 ];
 
@@ -24,7 +24,7 @@ export function SiteHeader({ active = null }: { active?: NavKey }) {
         </Link>
         <nav className="hidden items-center gap-8 text-[15px] font-medium uppercase tracking-wide text-[#6c6c6c] lg:flex xl:gap-10">
           {items.map((it) => (
-            <Link key={it.key} to={it.to!} {...(it.hash ? { hash: it.hash } : {})} className={cls(it.key)}>
+            <Link key={it.key} to={it.to} className={cls(it.key)}>
               {it.label}
             </Link>
           ))}
@@ -49,8 +49,7 @@ export function SiteHeader({ active = null }: { active?: NavKey }) {
             {items.map((it) => (
               <Link
                 key={it.key}
-                to={it.to!}
-                {...(it.hash ? { hash: it.hash } : {})}
+                to={it.to}
                 onClick={() => setOpen(false)}
                 className={`border-b border-gray-100 py-3 ${cls(it.key)}`}
               >
