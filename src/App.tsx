@@ -5,6 +5,7 @@ import About from "./routes/about";
 import Leadership from "./routes/leadership";
 import Verticals from "./routes/verticals";
 import Contact from "./routes/contact";
+import CvForm from "./routes/cv-form";
 
 function ScrollToHashOrTop() {
   const { pathname, hash } = useLocation();
@@ -45,6 +46,7 @@ export default function App() {
         <Route path="/leadership" element={<Leadership />} />
         <Route path="/verticals" element={<Verticals />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/cv-form" element={<CvForm />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </>
