@@ -25,6 +25,10 @@ export const Route = createFileRoute("/")({
       { title: "HuQuo - Analysing The Human Quotient" },
       { name: "description", content: "HuQuo is the next stage in the evolution of HR. A fresh perspective towards people and organisations." },
     ],
+    links: [
+      { rel: "preload", as: "image", href: heroMobile1.url, media: "(max-width: 767px)", fetchpriority: "high" } as any,
+      { rel: "preload", as: "image", href: hero1.url, media: "(min-width: 768px)", fetchpriority: "high" } as any,
+    ],
   }),
   component: Index,
 });
@@ -61,6 +65,8 @@ function Index() {
                 width={1920}
                 height={900}
                 loading={i === 0 ? "eager" : "lazy"}
+                decoding={i === 0 ? "sync" : "async"}
+                fetchPriority={i === 0 ? "high" : "low"}
               />
             </picture>
           );

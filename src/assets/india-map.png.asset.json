@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "7c95ef74-6988-478d-b8b2-f0145877adbf",
+  "asset_id": "4eccbd7e-5b33-41d4-a311-e5c62739c5a2",
   "project_id": "b2f49e00-2632-42dc-8a05-4fff413873e2",
-  "url": "/__l5e/assets-v1/7c95ef74-6988-478d-b8b2-f0145877adbf/india-map.png",
-  "r2_key": "a/v1/b2f49e00-2632-42dc-8a05-4fff413873e2/7c95ef74-6988-478d-b8b2-f0145877adbf/india-map.png",
-  "original_filename": "india-map.png",
-  "size": 305279,
-  "content_type": "image/png",
-  "created_at": "2026-06-16T06:03:50Z"
+  "url": "/__l5e/assets-v1/4eccbd7e-5b33-41d4-a311-e5c62739c5a2/india-map.webp",
+  "r2_key": "a/v1/b2f49e00-2632-42dc-8a05-4fff413873e2/4eccbd7e-5b33-41d4-a311-e5c62739c5a2/india-map.webp",
+  "original_filename": "india-map.webp",
+  "size": 96518,
+  "content_type": "image/webp",
+  "created_at": "2026-06-17T06:29:38Z"
 }

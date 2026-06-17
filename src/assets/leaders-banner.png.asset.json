@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "asset_id": "b9659f9f-1619-4eb3-a1c5-2418693491bb",
+  "asset_id": "1ddef961-43dc-418c-bbb4-8b9011a63e66",
   "project_id": "b2f49e00-2632-42dc-8a05-4fff413873e2",
-  "url": "/__l5e/assets-v1/b9659f9f-1619-4eb3-a1c5-2418693491bb/leaders-banner.png",
-  "r2_key": "a/v1/b2f49e00-2632-42dc-8a05-4fff413873e2/b9659f9f-1619-4eb3-a1c5-2418693491bb/leaders-banner.png",
-  "original_filename": "leaders-banner.png",
-  "size": 1033415,
-  "content_type": "image/png",
-  "created_at": "2026-06-16T06:06:49Z"
+  "url": "/__l5e/assets-v1/1ddef961-43dc-418c-bbb4-8b9011a63e66/leaders-banner.webp",
+  "r2_key": "a/v1/b2f49e00-2632-42dc-8a05-4fff413873e2/1ddef961-43dc-418c-bbb4-8b9011a63e66/leaders-banner.webp",
+  "original_filename": "leaders-banner.webp",
+  "size": 35088,
+  "content_type": "image/webp",
+  "created_at": "2026-06-17T06:29:38Z"
 }
