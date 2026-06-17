@@ -193,7 +193,14 @@ export default function CvFormPage() {
                   <div>
                     <label className={labelCls}>CTC :</label>
                     <div className="mt-2 flex items-stretch border border-gray-300 bg-white focus-within:border-[#1FB6D4]">
-                      <span className="flex items-center border-r border-gray-300 px-3 text-sm text-[#333]">₹</span>
+                      <select
+                        value={form.ctcCurrency}
+                        onChange={(e) => set("ctcCurrency", e.target.value as "inr" | "usd")}
+                        className="border-r border-gray-300 bg-gray-50 px-3 py-2.5 text-sm outline-none"
+                      >
+                        <option value="inr">₹ (INR)</option>
+                        <option value="usd">$ (USD)</option>
+                      </select>
                       <input value={form.ctc} onChange={(e) => set("ctc", e.target.value.replace(/[^0-9,]/g, ""))} className="w-full px-4 py-2.5 text-[15px] outline-none" />
                     </div>
                   </div>
