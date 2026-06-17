@@ -10,6 +10,7 @@ type FormState = {
   mobile: string;
   outsideIndia: boolean;
   location: string;
+  country: string;
   experience: string;
   resume: File | null;
   noResume: boolean;
@@ -31,6 +32,7 @@ const initial: FormState = {
   mobile: "",
   outsideIndia: false,
   location: "",
+  country: "",
   experience: "",
   resume: null,
   noResume: false,
