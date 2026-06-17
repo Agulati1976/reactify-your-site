@@ -1,6 +1,13 @@
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { ChevronUp, FileText, Instagram, Twitter, Linkedin, Facebook } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import logo from "@/assets/huquo-logo.png";
 const hero1 = { url: "/assets/hero-1.jpg" };
 const hero2 = { url: "/assets/hero-2.jpg" };
