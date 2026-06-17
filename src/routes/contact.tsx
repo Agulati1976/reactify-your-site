@@ -2,8 +2,8 @@ import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { Phone, ChevronUp, Linkedin, Instagram, Twitter, Facebook, Send, MapPin } from "lucide-react";
 import logo from "@/assets/huquo-logo.png";
-import banner from "@/assets/contact-banner.png.asset.json";
-import timeSquare from "@/assets/time-square.png.asset.json";
+const banner = { url: "/assets/contact-banner.png" };
+const timeSquare = { url: "/assets/time-square.png" };
 import { SiteHeader } from "@/components/SiteHeader";
 
 export default function ContactPage() {
