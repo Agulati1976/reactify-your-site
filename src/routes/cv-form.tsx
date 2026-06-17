@@ -60,6 +60,14 @@ const ugSpecs = ["Computer Science", "Information Technology", "Electronics", "M
 const pgCourses = ["M.Tech", "M.Sc", "M.Com", "M.A", "MBA/PGDM", "M.C.A", "M.Pharma", "LLM", "Other", "None"];
 const pgSpecs = ["Computer Science", "Marketing", "Finance", "HR", "Operations", "Other"];
 
+const countries = [
+  "United States", "United Kingdom", "Canada", "Australia", "Germany", "France", "Singapore",
+  "UAE", "Saudi Arabia", "Qatar", "Kuwait", "Oman", "Bahrain", "Malaysia", "Thailand",
+  "Philippines", "Indonesia", "Vietnam", "Japan", "South Korea", "China", "Hong Kong",
+  "Netherlands", "Sweden", "Switzerland", "Italy", "Spain", "South Africa", "Nigeria",
+  "Kenya", "Brazil", "Mexico", "Argentina", "New Zealand", "Ireland", "Belgium", "Other",
+];
+
 export default function CvFormPage() {
   useEffect(() => { document.title = "Drop Your CV - HuQuo"; }, []);
   const [form, setForm] = useState<FormState>(initial);
